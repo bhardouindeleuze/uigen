@@ -5,7 +5,7 @@ import {
   LanguageModelV1Message,
 } from "@ai-sdk/provider";
 
-const MODEL = "claude-haiku-4-5";
+const MODEL = "claude-haiku-4-5-20251001";
 
 export class MockLanguageModel implements LanguageModelV1 {
   readonly specificationVersion = "v1" as const;
@@ -320,17 +320,11 @@ export default Card;`;
 const Counter = () => {
   const [count, setCount] = useState(0);
 
-  const increment = () => {
-    setCount(count + 1);
-  };
+  const increment = () => setCount(count + 1);
 
-  const decrement = () => {
-    setCount(count - 1);
-  };
+  const decrement = () => setCount(count - 1);
 
-  const reset = () => {
-    setCount(0);
-  };
+  const reset = () => setCount(0);
 
   return (
     <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md">
