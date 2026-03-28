@@ -155,7 +155,7 @@ export function FileSystemProvider({
             if (path && file_text !== undefined) {
               const result = fileSystem.createFileWithParents(path, file_text);
               if (!result.startsWith("Error:")) {
-                createFile(path, file_text);
+                triggerRefresh();
               }
             }
             break;
@@ -208,7 +208,7 @@ export function FileSystemProvider({
         }
       }
     },
-    [fileSystem, createFile, updateFile, deleteFile, renameFile]
+    [fileSystem, triggerRefresh, updateFile, deleteFile, renameFile]
   );
 
   return (
